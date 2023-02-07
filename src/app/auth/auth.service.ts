@@ -1,8 +1,8 @@
 import { Injectable, Logger } from '@nestjs/common'
 import { JwtService } from '@nestjs/jwt'
 
-import { UsersService } from '../users/users.service'
-import { User } from '../users/entities/user.entity'
+import { UserService } from '../user/user.service'
+import { User } from '../user/entities/user.entity'
 import { Types } from 'mongoose'
 
 @Injectable()
@@ -10,7 +10,7 @@ export class AuthService {
   private logger: Logger = new Logger(AuthService.name)
 
   constructor(
-    private usersService: UsersService,
+    private usersService: UserService,
     private jwtService: JwtService
   ) {}
 

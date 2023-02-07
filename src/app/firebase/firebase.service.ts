@@ -2,7 +2,7 @@ import { Injectable, Logger } from '@nestjs/common'
 import * as firebaseConfig from '../../../firebase.json'
 import { app } from 'firebase-admin'
 import App = app.App
-import { UsersService } from '@app/users/users.service'
+import { UserService } from '@app/user/user.service'
 import * as firebase from 'firebase-admin'
 import { DecodedIdToken } from 'firebase-admin/lib/auth/token-verifier'
 
@@ -24,7 +24,7 @@ export class FirebaseService {
   private logger: Logger = new Logger(FirebaseService.name)
   private defaultApp: App
 
-  constructor(private usersService: UsersService) {
+  constructor(private usersService: UserService) {
     this.defaultApp = firebase.initializeApp({
       credential: firebase.credential.cert(firebase_params)
     })

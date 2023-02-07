@@ -1,16 +1,16 @@
 import { Args, Query, Resolver } from '@nestjs/graphql'
-import { UsersService } from './users.service'
+import { UserService } from './user.service'
 import { User, UserDocument } from './entities/user.entity'
 import { UseGuards } from '@nestjs/common'
 import { CurrentUser } from '@decorators/user.decorator'
 import { InputValidator } from '@shared/validator/input.validator'
-import { GetUsersFilter } from '@app/users/filters/get-users.filter'
+import { GetUsersFilter } from '@app/user/filters/get-users.filter'
 import { FilterQuery } from 'mongoose'
 import { JWTAuthGuard } from '@guards/jwt.guard'
 
 @Resolver(() => User)
-export class UsersResolver {
-  constructor(private readonly usersService: UsersService) {}
+export class UserResolver {
+  constructor(private readonly usersService: UserService) {}
 
   @Query(() => User, { name: 'me' })
   @UseGuards(JWTAuthGuard)

@@ -1,5 +1,5 @@
 import { ObjectType, Field } from '@nestjs/graphql'
-import { User } from '@app/users/entities/user.entity'
+import { User } from '@app/user/entities/user.entity'
 
 @ObjectType()
 export class Notify {

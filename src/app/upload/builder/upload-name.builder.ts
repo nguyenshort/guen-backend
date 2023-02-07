@@ -1,6 +1,6 @@
 import { v4 as uuidv4 } from 'uuid'
 
-import { UserDocument } from '@app/users/entities/user.entity'
+import { UserDocument } from '@app/user/entities/user.entity'
 
 export interface IUploadName {
   pathName: string

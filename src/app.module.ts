@@ -3,7 +3,7 @@ import { AppController } from './app.controller'
 import { AppService } from './app.service'
 import { FirebaseStrategy } from '@passport/firebase.strategy'
 import { ApolloModule } from '@apollo/apollo.module'
-import { UsersModule } from '@app/users/users.module'
+import { UserModule } from '@app/user/user.module'
 import { DatabaseModule } from './database/database.module'
 import { EventEmitterModule } from '@nestjs/event-emitter'
 import { NotifyModule } from '@app/notify/notify.module'
@@ -14,6 +14,7 @@ import { ServeStaticModule } from '@nestjs/serve-static'
 import { join } from 'path'
 import { AuthModule } from '@app/auth/auth.module'
 import { FirebaseModule } from '@app/firebase/firebase.module'
+import { CategoryModule } from './app/category/category.module';
 
 @Module({
   imports: [
@@ -25,14 +26,15 @@ import { FirebaseModule } from '@app/firebase/firebase.module'
     }),
     CacheModule.register(),
     ApolloModule,
-    UsersModule,
+    UserModule,
     DatabaseModule,
     DatabaseModule,
     NotifyModule,
     PubSubModule,
     UploadModule,
     AuthModule,
-    FirebaseModule
+    FirebaseModule,
+    CategoryModule
   ],
   controllers: [AppController],
   providers: [AppService, FirebaseStrategy]

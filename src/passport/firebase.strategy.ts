@@ -1,8 +1,8 @@
 import { PassportStrategy } from '@nestjs/passport'
 import { Injectable, Logger, UnauthorizedException } from '@nestjs/common'
 import { ExtractJwt, Strategy } from 'passport-firebase-jwt'
-import { UsersService } from '@app/users/users.service'
-import { UserDocument } from '@app/users/entities/user.entity'
+import { UserService } from '@app/user/user.service'
+import { UserDocument } from '@app/user/entities/user.entity'
 import { FirebaseService } from '@app/firebase/firebase.service'
 
 @Injectable()

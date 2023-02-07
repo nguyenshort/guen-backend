@@ -1,9 +1,9 @@
 import { forwardRef, Global, Module } from '@nestjs/common'
-import { UsersService } from './users.service'
-import { UsersResolver } from './users.resolver'
+import { UserService } from './user.service'
+import { UserResolver } from './user.resolver'
 import { MongooseModule } from '@nestjs/mongoose'
-import { User, UserEntity } from '@app/users/entities/user.entity'
-import { UserController } from '@app/users/user.controller'
+import { User, UserEntity } from '@app/user/entities/user.entity'
+import { UserController } from '@app/user/user.controller'
 import { AuthModule } from '@app/auth/auth.module'
 
 @Global()
@@ -21,8 +21,8 @@ import { AuthModule } from '@app/auth/auth.module'
     ]),
     forwardRef(() => AuthModule)
   ],
-  providers: [UsersResolver, UsersService],
+  providers: [UserResolver, UserService],
   controllers: [UserController],
-  exports: [UsersService]
+  exports: [UserService]
 })
-export class UsersModule {}
+export class UserModule {}

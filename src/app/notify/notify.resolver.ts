@@ -5,7 +5,7 @@ import { RedisPubSub } from 'graphql-redis-subscriptions'
 import { PUB_SUB } from '@apollo/pubsub.module'
 import { Inject, Logger, UseGuards } from '@nestjs/common'
 import { CurrentUser } from '@decorators/user.decorator'
-import { UserDocument } from '@app/users/entities/user.entity'
+import { UserDocument } from '@app/user/entities/user.entity'
 import { SubscriptionGuard } from '../../guards/subscription.guard'
 
 @Resolver(() => Notify)

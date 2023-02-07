@@ -1,6 +1,6 @@
 import { createParamDecorator, ExecutionContext } from '@nestjs/common'
 import { GqlExecutionContext } from '@nestjs/graphql'
-import { UserDocument } from '@app/users/entities/user.entity'
+import { UserDocument } from '@app/user/entities/user.entity'
 
 export interface FirebaseUser {
   uid: string

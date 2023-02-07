@@ -1,13 +1,13 @@
 import { Injectable, Logger } from '@nestjs/common'
 import { InjectModel } from '@nestjs/mongoose'
-import { User, UserDocument } from '@app/users/entities/user.entity'
+import { User, UserDocument } from '@app/user/entities/user.entity'
 import { FilterQuery, Model } from 'mongoose'
 import { auth } from 'firebase-admin'
 import { FilterOffet } from '@shared/args/filter-offset.input'
-import { UserRole } from '@app/users/enum/role.enum'
+import { UserRole } from '@app/user/enum/role.enum'
 
 @Injectable()
-export class UsersService {
+export class UserService {
   private logger: Logger = new Logger('UsersService')
 
   constructor(@InjectModel(User.name) private userModel: Model<UserDocument>) {}

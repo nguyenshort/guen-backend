@@ -1,16 +1,16 @@
 import { Controller, Get, Post, UseGuards } from '@nestjs/common'
 
 import { FirebaseGuard } from '../../guards/firebase.guard'
-import { UsersService } from '@app/users/users.service'
+import { UserService } from '@app/user/user.service'
 import { CurrentUser } from '@decorators/user.decorator'
-import { User } from '@app/users/entities/user.entity'
+import { User } from '@app/user/entities/user.entity'
 import { AuthService } from '@app/auth/auth.service'
 import { JWTAuthGuard } from '../../guards/jwt.guard'
 
 @Controller('users')
 export class UserController {
   constructor(
-    private readonly usersService: UsersService,
+    private readonly usersService: UserService,
     private readonly authService: AuthService
   ) {}
 
