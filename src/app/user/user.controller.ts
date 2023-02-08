@@ -5,7 +5,7 @@ import { UserService } from '@app/user/user.service'
 import { CurrentUser } from '@decorators/user.decorator'
 import { User } from '@app/user/entities/user.entity'
 import { AuthService } from '@app/auth/auth.service'
-import { JWTAuthGuard } from '../../guards/jwt.guard'
+import { JWTAuthGuard } from '@guards/jwt.guard'
 
 @Controller('users')
 export class UserController {
